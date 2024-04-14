@@ -24,7 +24,7 @@ function App() {
           count is {count}
         </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          {import.meta.env.VITE_IN_VALIDATION}
         </p>
       </div>
       <p className="read-the-docs">
