@@ -99,6 +99,29 @@ Para acessar o projeto através do host `local.meusite.com.br`, você precisa ad
    ```
 4. Salve e feche o arquivo.
 
+## 💡 ApiService
+Além dos scripts de desenvolvimento e teste, este projeto inclui scripts para build e Como utilizar a apiService:
+
+```bash
+  const myFunction = async () => {
+    setLoading(true);
+    const api = new ApiService({ baseUrl : Environment.API_URL });
+    const resources = `/user/get-avatar?id=${id}`;
+    try {
+      const response = await api.request<myType>({
+        type : HttpVerb.GET, requestOptions : { 
+         resourcePath: resources
+        }
+      });
+      console.log(response)
+    } catch (error) {
+      console.error('Failed to fetch:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+```
+
 ## 💡 Scripts Adicionais
 Além dos scripts de desenvolvimento e teste, este projeto inclui scripts para build e outras operações via npm:
 
